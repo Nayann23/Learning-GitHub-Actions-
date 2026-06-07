@@ -1,8 +1,6 @@
 import random
 import pandas
 
-
-print("Hello")
 print("Program Started")
 
 x = 10 / 0
