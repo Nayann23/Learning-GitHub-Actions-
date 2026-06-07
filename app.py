@@ -3,7 +3,11 @@ import pandas
 
 
 print("Hello")
+print("Starting")
 
+x = 10 / 0
+
+print("Finished")
 
 secret_number = random.randint(1, 10)
 guess = 7
