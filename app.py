@@ -2,7 +2,7 @@ import random
 import pandas
 
 
-print("Hello"
+print("Hello")
 
 
 secret_number = random.randint(1, 10)
