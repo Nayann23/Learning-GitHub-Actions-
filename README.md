@@ -1,0 +1,1 @@
+Learn the GitHub actions took three days but i learn the CICD in a good way now i can use this 
