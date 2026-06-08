@@ -1,14 +1,24 @@
-name: Number Guessing Game CI
+name: JSON Artifact Demo
 
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
-  test:
+  create-json:
 
     runs-on: ubuntu-latest
 
     steps:
+
       - uses: actions/checkout@v4
-      - run: pip install -r requirements.txt 
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
       - run: python app.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: run-info
+          path: run_info.json

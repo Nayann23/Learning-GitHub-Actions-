@@ -1,19 +1,16 @@
-import random
-import pandas
+import json
+import os
+from datetime import datetime
 
-print("Program Started")
+run_info = {
+    "trigger": os.getenv("GITHUB_EVENT_NAME", "unknown"),
+    "repository": os.getenv("GITHUB_REPOSITORY", "unknown"),
+    "workflow": os.getenv("GITHUB_WORKFLOW", "unknown"),
+    "created_at": datetime.utcnow().isoformat()
+}
 
-x = 10 / 0
+with open("run_info.json", "w") as file:
+    json.dump(run_info, file, indent=4)
 
-print("Program Finished")
-
-secret_number = random.randint(1, 10)
-guess = 7
-
-print(f"Secret Number: {secret_number}")
-print(f"Guess: {guess}")
-
-if guess == secret_number:
-    print("🎉 Correct Guess!")
-else:
-    print("❌ Wrong Guess!")
+print("run_info.json created successfully")
+print(run_info)
